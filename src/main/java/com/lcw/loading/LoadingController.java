@@ -2,14 +2,15 @@ package com.lcw.loading;
 
 import com.lcw.action.LoadingAction;
 import com.lcw.util.HttpClientUtil;
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
 import org.slf4j.LoggerFactory;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class LoadingController implements Initializable {
 
@@ -31,7 +32,8 @@ public class LoadingController implements Initializable {
         File file = new File(System.getProperty("user.dir") + "/lib/" + name);
         if (!file.exists()) {
             try {
-                HttpClientUtil.downloadFile("http://www.vbox.top/app/" + name, file.getAbsolutePath());
+//                HttpClientUtil.downloadFile("http://www.vbox.top/app/" + name, file.getAbsolutePath());
+                HttpClientUtil.downloadFile("https://www.google.com/" + name, file.getAbsolutePath());
             } catch (IOException ex) {
                 LOGGER.error("下载依赖包失败，请重启再试。", ex);
             }
